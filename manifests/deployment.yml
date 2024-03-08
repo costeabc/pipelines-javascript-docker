@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: playapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: playapp
+  template:
+    metadata:
+      labels:
+        app: playapp 
+    spec:
+      containers:
+        - name: playapp 
+          image: craksplay001.azurecr.io/playapp
+          ports:
+          - containerPort: 8080
